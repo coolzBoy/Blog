@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>博客-首页</title>
+<meta name="keywords" content="runner, templatemo, free web template, black, white, CSS, HTML" />
+<meta name="description" content="Runner Theme is a stylish website template by templatemo.com for free download. Homepage is integrated with curved beautiful slider." />
+<link href="public/index/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="public/index/css/orman.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="public/index/css/nivo-slider.css" type="text/css" media="screen" />	
+
+<link rel="stylesheet" type="text/css" href="public/index/css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="public/index/js/jquery.min.js"></script>
+<script type="text/javascript" src="public/index/js/ddsmoothmenu.js">
+
+</script>
+
+<script type="text/javascript">
+ 
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+<link rel="stylesheet" href="public/index/css/slimbox2.css" type="text/css" media="screen" /> 
+<script type="text/JavaScript" src="public/index/js/slimbox2.js"></script> 
+
+</head>
+<body id="home">
+
+<div id="templatemo_wrapper">
+
+    <?php include 'cache/index/public_html.php';?>
+    
+    <div id="templatemo_slider"><span class="sliderframe"></span>
+    	 <div class="slider-wrapper theme-orman">
+            <div id="slider" class="nivoSlider">
+            	<img src="public/index/images/slider/01.jpg" alt="slider image 2" title="#htmlcaption" />
+                <img src="public/index/images/slider/02.jpg" alt="slider image 2" />
+                <img src="public/index/images/slider/03.jpg" alt="slider image 2" title="博客乐园，乐趣无穷！" />
+                <img src="public/index/images/slider/04.jpg" alt="slider image 4" />
+            </div>
+            <div id="htmlcaption" class="nivo-html-caption">
+                <strong> 博客乐园，意想不到的乐趣！</strong>
+            </div>
+        </div> 
+		<script type="text/javascript" src="public/index/js/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript" src="public/index/js/jquery.nivo.slider.pack.js"></script>
+        <script type="text/javascript">
+        $(window).load(function() {
+            $('#slider').nivoSlider({
+				controlNav:false,
+   			 directionNavHide: false
+			});
+        });
+        </script>
+    </div><!-- END of templatemo_slider -->
+    <a name="title"></a>
+    <div id="templatemo_twitter">
+    	想了解更多的最新知识资讯吗？来博客乐园，这里有你意想不到的爆炸知识，最新资讯，来和我们一起遨游在知识的海洋中吧！！！
+    </div> <!-- END of twitter -->
+    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >Website Template</a></div>
+    <div id="templatemo_main">
+    
+    	<div id="templatemo_content" class="left">
+            <h2>一起开始吧！</h2>
+            <hr />
+
+            <?php foreach ($title as $v): ?>
+            <div class="post-item last_post">
+            	<div class="post-meta">
+                    <?php foreach ($allUser as $vv): ?>
+                        <?php if ($v['author'] == $vv['username']): ?>
+
+                            <?php if ($vv['touxiang'] == ''): ?>
+                            <img src="public/index/images/tou.png" alt="post author image" />
+                            <?php else: ?>
+                            <img style="width: 50px;
+                                        height: 50px;"
+                                        src="<?=$vv['touxiang']; ?>" alt="post author image" />
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    <div class="post-meta-content">
+                    	<h2><?=$v['title']; ?></h2>
+                        发表于<span><font color="#90C53D"><?=$v['author']; ?></font></span>
+                        | <span><font color="#90C53D"><?=$v['time']; ?></font></a></span>
+                    </div>
+                    
+                    <div class="clear"></div>
+				</div>
+                <a class="more" href="index.php?c=blog&a=detail&bid=<?=$v['bid'];?>">查看</a>
+                <br/>浏览量：<?=$v['looks']; ?> &nbsp;&nbsp;&nbsp;评论数：<?=$v['replys']; ?>
+            </div>
+            <hr />
+            <?php endforeach; ?>
+
+
+             <div class="templatemo_paging">
+                <ul>
+                    <li><a  href="<?=$arr['first'];?>" >首页</a></li>
+                    <li><a  href="<?=$arr['pre'];?>" >上一页</a></li>
+
+                    <?php if ($p<=$totalPage): ?>
+                    <li><a  href="index.php?page=<?=$p;?>"><?=$p; ?></a></li>
+                    <?php endif; ?>
+                    <?php if ($p+1<=$totalPage): ?>
+                    <li><a  href="index.php?page=<?=$p+1;?>"><?=$p+1; ?></a></li>
+                    <?php endif; ?>
+                    <?php if ($p+2<=$totalPage): ?>
+                    <li><a  href="index.php?page=<?=$p+2;?>"><?=$p+2; ?></a></li>
+                    <?php endif; ?>
+                    <li><a  href="<?=$arr['next'];?>" >下一页</a></li>
+                    <li><a  href="<?=$arr['last'];?>" >尾页</a></li>
+                    当前页码为：<?=$curPage; ?>
+                    <br/>共有<?=$totalPage; ?>页
+                </ul>
+                
+                <div class="clear"></div>
+            </div>
+
+        </div>
+		
+        </div> <!-- END of content -->
+                
+		
+        
+        <div class="clear"></div>
+
+
+</div> <!-- END of wrapper -->
+
+<div id="templatemo_bottom_wrapper">
+	<div id="templatemo_bottom">
+    	
+        <div class="col col_3">
+            <h4>Photo Gallery</h4>
+            <ul class="nobullet footer_gallery">
+                <li><a href="public/index/images/portfolio/02.jpg" rel="lightbox[gallery]"><img src="public/index/images/templatemo_image_02.png" alt="image 2" /></a></li>
+                <li><a href="public/index/images/portfolio/03.jpg" rel="lightbox[gallery]"><img src="public/index/images/templatemo_image_03.png" alt="image 3" /></a></li>
+                <li><a href="public/index/images/portfolio/04.jpg" rel="lightbox[gallery]"><img src="public/index/images/templatemo_image_04.png" alt="image 4" /></a></li>
+                <li><a href="public/index/images/portfolio/05.jpg" rel="lightbox[gallery]"><img src="public/index/images/templatemo_image_05.png" alt="image 5" /></a></li>
+                <li><a href="public/index/images/portfolio/03.jpg" rel="lightbox[gallery]"><img src="public/index/images/templatemo_image_06.png" alt="image 6" /></a></li>
+                <li><a href="public/index/images/portfolio/01.jpg" rel="lightbox[gallery]"><img src="public/index/images/templatemo_image_07.png" alt="image 7" /></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    	
+        <div class="col col_3">
+        	<h4>Twitter</h4>
+      		<ul class="nobullet twitter">
+                <li><a href="#">@网站模板</a> Proin turpis nisi, placerat quis orci ac, tempor iaculis eros.</li>
+                <li>Suspendisse enean <a href="#">#FREE</a> website template, mi lacus gravida nisi, vitae commodo orci nisi non nulla.</li>
+                <li>Sed non varius lorem, in sollicitudin lectus. Cras vel urna a urna gravida consequat. Curabitur non risus dui. <a  href="#">#</a></li>
+                <li><a href="#" title="cn.mystockphoto.com" class="rower"  target="_blank">cn.mystockphoto.com</a></li>
+            </ul>
+        </div>
+        
+        <div class="col col_3 no_mr">
+        	<h4>Follow Us</h4>
+            <ul class="nobullet social">
+            	<li><a  href="#/templatemo" class="facebook">Facebook</a></li>
+                <li><a href="#" class="twitter">Twitter</a></li>
+                <li><a href="#" class="youtube">Youtube</a></li>
+                <li><a href="#" class="google">Google+</a></li>
+                <li><a href="#" class="vimeo">Vimeo</a></li>
+                <li><a href="#" class="skype">Skype</a></li>
+            </ul>
+        </div>
+        
+        <div class="clear"></div>
+    </div> <!-- END of bottom -->
+    
+</div> <!-- END of bottom wrapper -->
+
+<div id="templatemo_footer_wrapper">
+	<div id="templatemo_footer">
+    	Copyright © 2084 Company Name | More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> | Collect from <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+    </div> <!-- END of footer -->
+</div> <!-- END of footer wrapper -->
+
+</body>
+<script type='text/javascript' src='js/logging.js'></script>
+</html>
+

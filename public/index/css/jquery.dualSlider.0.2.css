@@ -1,0 +1,131 @@
+/* CAROUSEL */
+
+#carousel{
+	float: left;
+    position:relative;
+    width: 400px;
+	height: 240px;
+}
+
+#slider-image-frame {
+	display: block;
+	width: 400px;
+	height: 240px;
+	overflow: hidden;
+	position: relative;
+}
+
+#slider-image-frame span.slider_frame {
+	position: absolute;
+	display: block;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 400px;
+	height: 240px;
+	background: url(../images/templatemo_slider_imageframe.png)
+}
+
+#carousel .backgrounds{
+	display: block;
+	width: 400px;
+    height: 240px;
+	overflow: hidden;
+	background: none;
+}
+
+#carousel .backgrounds .item{
+    width: 400px;
+    height: 240px;
+    float:left;
+    z-index:1;
+	text-align: right;
+}
+
+#carousel .backgrounds .item_1{
+}
+#carousel .backgrounds .item_2{
+}
+
+#carousel  .backgrounds .item_3{
+}
+
+#carousel  .panel{
+    color: #fff;
+    position:absolute;
+    right: -400px;
+    top:0;
+    height: 240px;
+    width: 360px;
+    z-index:10;
+}
+
+#carousel .next{
+    position:absolute;
+    right: -480px;
+    top: 95px;
+    display:block;
+    width: 33px;
+    height: 45px;
+    background: transparent url(../images/carousel_next_bg.png) no-repeat 0 0;
+    text-indent: -6000px;
+}
+
+#carousel .previous{
+    position:absolute;
+    left: -80px;
+    top: 95px;
+    display:block;
+    width: 33px;
+    height: 45px;
+	z-index: 10000;
+    background: transparent url(../images/carousel_previous_bg.png) no-repeat 0 0;
+    text-indent: -6000px;
+}
+
+#carousel .panel .details_wrapper {
+	position:absolute;
+	top:0;
+	left:0;
+	width: 360px;
+	overflow:hidden;
+	height: 240px;
+}
+#carousel .panel .details_wrapper .details{
+    height: 240px;
+}
+#carousel .panel .details_wrapper .details .detail{
+    width: 360px;
+    height: 200px;
+	padding: 20px 0;
+    float:left;
+    
+}
+#carousel .panel .details_wrapper .details h2{
+	font-size: 30px;
+    margin: 0 0 30px 0;
+	color: #000;
+}
+#carousel  .panel .details_wrapper .details p {
+	font-size: 14px;
+	line-height: 1.6em;
+	color: #363013;
+}
+#carousel  .panel .details_wrapper .details a.slider_more{
+	float: left;
+	margin-top: 20px;
+	display: block;
+	width: 168px;
+	height: 53px;
+	line-height: 50px;
+	text-align: center;
+	color: #363013;
+	background: url(../images/templatemo_slider_button.png);
+    font-size:1.2em;
+	font-weight: 700;
+	text-decoration: none;
+}   
+#carousel  .panel .details_wrapper .details a.slider_more:hover {
+	text-decoration: none;
+}
+/* END CAROUSEL */
